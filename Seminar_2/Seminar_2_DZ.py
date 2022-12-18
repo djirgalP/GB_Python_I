@@ -30,8 +30,18 @@ S, P = map(int, input("Please, enter values S and P using a space: ").split())
 # X + Y = S
 # X * Y = P
 # Y = S - X
-# X**2 - S*X - P = 0
-
+# X**2 - S*X + P = 0
+discriminant = S**2 - 4*P
+if discriminant < 0:
+    print('Solution does not exist')
+elif discriminant == 0:
+    X = S // 2
+    Y = S - X
+    print('Solution is X = {} , Y = {}'.format(X, Y))
+else:
+    X1 = (S + discriminant ** 0.5) // 2
+    Y1 = S - X1
+    print('Solution is X = {} , Y = {}'.format(int(X1), int(Y1)))
 
 '''Задача 14
 Требуется вывести все целые степени двойки (т.е. числа вида 2k), не превосходящие числа N.'''
