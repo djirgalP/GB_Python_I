@@ -35,7 +35,9 @@ else:
 #Задача 8
 
 n, m, k = map(int, input("Please, enter values for n, m, k using a space: ").split())
-if (k % n == 0 or k % m == 0) and k <= n * m:
+if k == n * m:
+    print('you may take a whole chocolate')
+elif (k % n == 0 or k % m == 0) and k < n * m:
     print('yes')
 else:
     print('no')
