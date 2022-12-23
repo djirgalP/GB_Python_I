@@ -33,7 +33,22 @@ print('Число {} встречается {} раз'.format(X, counter))
 1 2 1 8 9 6 5 4 3 4
 Вывод: 6
 '''
-
+import random
+N_2 = int(input('Введите количество элементов массива N -> '))
+X_2 = int(input('Введите элемент X для поиска ближайшего в массиве ->'))
+array_2 = []
+for i in range(N_2):
+    random_number = round(random.randint(1, N_2))
+    array_2.append(random_number)
+print(array_2)
+element = array_2[0]
+for i in range(1, N_2):
+    if abs(X_2 - array_2[i]) < abs(X_2 - element):
+       element = array_2[i]
+    elif abs(X_2 - array_2[i]) == abs(X_2 - element):
+        if array_2[i] < element:
+            element = array_2[i]
+print('Ближайший к {} элемент массива - это {}'.format(X_2, element))
 '''Задача 20:
 В настольной игре Скрабл (Scrabble) каждая буква имеет определенную ценность.
 В случае с английским алфавитом очки распределяются так:
