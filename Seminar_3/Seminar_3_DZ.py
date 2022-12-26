@@ -33,7 +33,22 @@ print('Число {} встречается {} раз'.format(X, counter))
 1 2 1 8 9 6 5 4 3 4
 Вывод: 6
 '''
-
+import random
+N_2 = int(input('Введите количество элементов массива N -> '))
+X_2 = int(input('Введите элемент X для поиска ближайшего в массиве ->'))
+array_2 = []
+for i in range(N_2):
+    random_number = round(random.randint(1, N_2))
+    array_2.append(random_number)
+print(array_2)
+element = array_2[0]
+for i in range(1, N_2):
+    if abs(X_2 - array_2[i]) < abs(X_2 - element):
+       element = array_2[i]
+    elif abs(X_2 - array_2[i]) == abs(X_2 - element):
+        if array_2[i] < element:
+            element = array_2[i]
+print('Ближайший к {} элемент массива - это {}'.format(X_2, element))
 '''Задача 20:
 В настольной игре Скрабл (Scrabble) каждая буква имеет определенную ценность.
 В случае с английским алфавитом очки распределяются так:
@@ -59,3 +74,31 @@ Q, Z – 10 очков.
 
 Ввод: ноутбук
 Вывод: 12'''
+alphabet = {'A': 1, 'E': 1, 'I': 1, 'O': 1, 'U': 1, 'L': 1, 'N': 1, 'S': 1, 'T': 1, 'R': 1,
+            'D': 2, 'G': 2,
+            'B': 3, 'C': 3, 'M': 3, 'P': 3,
+            'F': 4, 'H': 4, 'V': 4, 'W': 4, 'Y': 4,
+            'K': 5,
+            'J': 8, 'X': 8,
+            'Q': 10, 'Z': 10,
+            'А': 1, 'В': 1, 'Е': 1, 'И': 1, 'Н': 1, 'О': 1, 'Р': 1, 'С': 1, 'Т': 1,
+            'Д': 2, 'К': 2, 'Л': 2, 'М': 2, 'П': 2, 'У': 2,
+            'Б': 3, 'Г': 3, 'Ё': 3, 'Ь': 3, 'Я': 3,
+            'Й': 4, 'Ы': 4,
+            'Ж': 5, 'З': 5, 'Х': 5, 'Ц': 5, 'Ч': 5,
+            'Ш': 8, 'Э': 8, 'Ю': 8,
+            'Ф': 10, 'Щ': 10, 'Ъ': 10}
+alphabet_rus = set('АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЪЫЭЮЯ')
+alphabet_eng = set('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+slovo = str(input('Введите слово -> '))
+slovo = slovo.upper()
+slovo_toCheck = set(slovo)
+#print(slovo_toCheck)
+
+if (slovo_toCheck <= alphabet_rus) or (slovo_toCheck <= alphabet_eng):
+    stoimost = 0
+    for i in range(len(slovo)):
+        stoimost += alphabet[slovo[i]]
+    print('Стоимость введенного слова = ', stoimost)
+else:
+    print('Введенное слово некорректно. Слово должно быть полностью составлено либо из английских, либо русских букв. ')
