@@ -33,3 +33,23 @@ if not final_list:
     print('Пересечений нет')
 else:
     print(*final_list, sep=' ')
+'''Задача 24:
+В фермерском хозяйстве в Карелии выращивают чернику. Она растет на круглой грядке, причем кусты высажены только по окружности. 
+Таким образом, у каждого куста есть ровно два соседних. Всего на грядке растет N кустов. '''
+
+N = int(input("Введите количество кустов черники -> "))
+blueberry = []
+for i in range(N):
+    random_number = round(random.randint(1, 10))
+    blueberry.append(random_number)
+print(*blueberry, sep=' ')
+
+max_blueberry = 0
+for k in range(-N + 1, 1, 1):
+    #print('k = ', k)
+    amount_of_blueberry = blueberry[k - 1] + blueberry[k] + blueberry[k + 1]
+    #print('amount_of_blueberry', amount_of_blueberry)
+    if max_blueberry < amount_of_blueberry:
+        max_blueberry = amount_of_blueberry
+
+print('Максимальное число ягод = ', max_blueberry)
