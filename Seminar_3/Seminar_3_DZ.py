@@ -102,3 +102,4 @@ if (slovo_toCheck <= alphabet_rus) or (slovo_toCheck <= alphabet_eng):
     print('Стоимость введенного слова = ', stoimost)
 else:
     print('Введенное слово некорректно. Слово должно быть полностью составлено либо из английских, либо русских букв. ')
+
