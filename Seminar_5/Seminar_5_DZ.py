@@ -9,8 +9,7 @@ def f(x, y):
     elif y == 0:
         return 1
     else:
-        print('Степень меньше нуля')
-        return 0
+        return f(x, y + 1) / x
 
 A = int(input('Введите число А -> '))
 B = int(input('Введите степень возведения числа А - число B -> '))
