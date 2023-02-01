@@ -89,7 +89,6 @@ while (show_flag):
         deleteUserByAnyString(fileName, part)
     # elif chosen_menu == 6:
         #изменить номер телефона
-
     else:
         #выход
         print('Завершение')
