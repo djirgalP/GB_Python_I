@@ -88,8 +88,7 @@ while (show_flag):
         part = str(input('Введите часть имени или номера для удаления контакта: '))
         deleteUserByAnyString(fileName, part)
     # elif chosen_menu == 6:
-    #изменить номер телефона
-
+        #изменить номер телефона
     else:
         #выход
         print('Завершение')
