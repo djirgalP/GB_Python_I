@@ -3,8 +3,7 @@ import function as fn
 
 if __name__ == "__main__":
     # основной блок
-    menuitems = [
-        ("1", "Вывод автобусов", fn.print_bus),
+    menuitems = [('1', "Вывод автобусов", fn.print_bus),
         ("2", "Добавление автобуса", fn.add_bus),
         ("3", "Вывод водителей", fn.print_driver),
         ("4", "Добавление водителей", fn.add_driver),

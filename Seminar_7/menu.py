@@ -1,4 +1,5 @@
 from os import system
+
 '''
 класс меню
 elements = список кортежей
@@ -10,8 +11,8 @@ elements = список кортежей
 
 class Menu:
 
-    def __init__(self, elements=[]):
-        self.elements = elements
+    def __init__(self, elems=[]):
+        self.elements = elems
 
     def print(self):
         for (mark, text, _) in self.elements:
