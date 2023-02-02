@@ -18,15 +18,13 @@ def add_item_to_file(name, new_data):
     print("Запись {} успешно добавлена".format(new_data))
 
 
-def get_item_by_id(id, data):
+def get_item_by_id(identifier, data):
     for id_record, item_record1, item_record2 in data:
-        item_record = []
-        if id == id_record:
-            item_record.append(item_record1)
-            item_record.append(item_record2)
-            print("item_record = ", item_record1, item_record2)
-            return item_record
-            break
+        #print("identifier = ", identifier)
+        #print(" id_record = ",  id_record)
+        if identifier == id_record:
+            #print("item_record = ", item_record1, item_record2)
+            return [item_record1, item_record2]
     return None
 
 
@@ -67,20 +65,20 @@ def print_route():
     buses = read_data_from_file('bus.txt')
     drivers = read_data_from_file('driver.txt')
     print('|Маршрут|   №|Фамилия водителя|Имя водителя|Марка автобуса| Госномер|')
-    print('-'*62)
+    print('-'*70)
     for r_name, r_number, r_bus, r_driver in routes:
         driver = []
         bus = []
         bus = get_item_by_id(r_bus, buses)
         driver = get_item_by_id(r_driver, drivers)
-        print('|{:>7}|{:>4}|{:>16}|{:>12}|{:>14}|{:>9}|'.format(r_name, r_number, driver[0], driver[1], bus[0], bus[1]))
+        print('|{:>8}|{:>4}|{:>16}|{:>12}|{:>14}|{:>9}|'.format(r_name, r_number, driver[0], driver[1], bus[0], bus[1]))
     input("Enter>")
 
 
 def add_route():
-    route_id = input('Введите Идентификатор маршрута:')
+    route_id = input("Введите Идентификатор маршрута:")
     route_number = input("Введите Номер маршрута: ")
-    driver_id = input("Введите Идентификатор водителя: ")
     bus_id = input("Введите Идентификатор автобуса: ")
-    add_item_to_file('marshrut.txt', [route_id, route_number, driver_id, bus_id])
+    driver_id = input("Введите Идентификатор водителя: ")
+    add_item_to_file('marshrut.txt', [route_id, route_number, bus_id, driver_id])
 
