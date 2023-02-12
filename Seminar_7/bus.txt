@@ -1,2 +1,4 @@
-bus1, МТ193Ц08
-bus2, КЦ098У08
+bus1,Mercedes,МТ193Ц08
+bus2,Volvo,КЦ098У08
+bus3,Volkswagen,HO012I99
+bus4,Lada,JH125K88
